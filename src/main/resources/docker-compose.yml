@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  # MariaDB
+  db:
+    image: mariadb
+    restart: always
+    ports:
+      - 3306:3306
+    container_name: mariadb_demo
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demo
+      MYSQL_USER: demo01
+      MYSQL_PASSWORD: demo01
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/sql:/docker-entrypoint-initdb.d

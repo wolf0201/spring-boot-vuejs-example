@@ -1,0 +1,18 @@
+# 共通設定
+spring:
+  profiles:
+    active: local
+
+  application:
+    name: SpringBoot Vue.js Demo
+
+  # DB接続情報
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/demo
+    username: demo01
+    password: demo01
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  # flyway 実行ファイル
+  flyway:
+    locations: classpath:db/migration/local
