@@ -8,7 +8,7 @@ spring:
 
   # DB接続情報
   datasource:
-    url: jdbc:mariadb://127.0.0.1:3306/demo
+    url: jdbc:mariadb://localhost:3306/demo
     username: demo01
     password: demo01
     driver-class-name: org.mariadb.jdbc.Driver
@@ -16,3 +16,6 @@ spring:
   # flyway 実行ファイル
   flyway:
     locations: classpath:db/migration/local
+    
+server:
+  port: 8081
